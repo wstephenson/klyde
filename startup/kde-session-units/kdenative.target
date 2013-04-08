@@ -1,0 +1,4 @@
+[Unit]
+Description=The KDE Desktop Environment (native systemd session)
+Requires=kdeinit.service
+AllowIsolate=true

@@ -1,0 +1,21 @@
+[Unit]
+Description=KDE Init System
+Requires=dbus.socket
+Requires=xorg.target
+After=xorg.target
+
+[Service]
+Type=simple
+#Type=dbus
+#BusName=org.kde.klauncher
+#Need to use cmake to generate paths
+ExecStart=/usr/lib64/kde4/libexec/start_kdeinit_wrapper +kcminit_startup
+# Do these need to be added to every service unit file?
+Environment=DISPLAY=:1
+Environment=XDG_RUNTIME_DIR=/run/user/%I
+#Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%i/dbus/user_bus_socket
+
+
+[Install]
+WantedBy=kdenative.target
+

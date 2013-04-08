@@ -1,0 +1,404 @@
+lkowyde effort
+
+Reduce memory footprint of default desktop
+  Reduce login time?
+    About 6s to login either way, interestingly logout is 4s/1.5s cut down.
+Reduce disk footprint of installed packages
+
+Notes/questions?
+* What causes kio_file x2, kio_trash and kio_desktop to be launched on login?
+    2nd activity with desktop folderview containing trash?
+    kio_trash: kickoff's trash item, and something else: ask coolo or dfaure how to track KIO requester
+    kio_desktop: desktop folderviews
+
+!kde-workspace/ksmserver/README
+
+startkde
+* is LD_BIND_NOW still a win?
+* what does the sed check for out of PATH start cost?
+* document that after ksmserver is started, the desktop is logged in and running until logout begins
+*/usr/shutdown derived from libdir is a useless prefix for kde shutdown scripts
+* disable kde4-migrate call now, except on SLE
+* remove krandrrc stuff when afiestas' stuff lands
+* startupconfigkeys stuff setups up config files that are evaluated by kcminit
+* startup states documented in kde-workspace/ksplash/README
+* distinction between kdeinit4, klauncher and kwrapper4?
+  * kdeinit launches kded and klauncher, and launches KDE processes by forking itself.  setuid to prevent OOM killing.  whatdoes kdeinit_library_path do? seems like it used to initialise lt_dl searchpath, but this was commented out in 2006 and now it only generates the kwrapper socket path using DISPLAY
+  * klauncher is a dbus service started by kdeinit.  It commands kdeinit over a local socket pair.  It is for starting other services (by desktop file) and ioslaves (by protocol/host) (incl in debug/vg mode), ioslave manager (recycles idle ioslaves, puts on hold, kills after timeout). Service activation uses appearance of dbus service to detect completed launch.  Manages startup notifications. Applies Kiosk restrictions to service requests.  Performs autostart under the control of ksmserver.
+  * all source is in kdelibs/kinit.
+  kwrapper4 causes a program to be launched by kdeinit4
+* is kcminit still used
+  * kde-workspace/kcminit
+  * kaccess is started by its kcm's kcminit function
+* autostart documentation is in kdelibs/kinit for klauncher.
+* Minimalistic ksplashqml disappears later than ksplashx
+
+KSplash includes some Qt sources which may be stale.  They are modified to work without QApplication, perhaps later refactorings in Qt render these redundant.
+"
+KSplash Startup states:
+===============
+
+These are ksplash states:
+- initial - at the beginning
+- kded - after kded is running (dbus is ready, etc.)
+- confupdate - after kconf_update (settings updated after upgrade, etc.)
+- kcminit - after configuration setup
+- ksmserver - session manager is started
+- wm - window manager is running
+- desktop - desktop (plasma) is running
+- ready - session is ready (not fully actually, still e.g. restoring applications, but splash goes away)
+
+Note however that these states should not be relied on too much:
+- they do not represent very accurately what is actually going on
+- states may be removed (they'll take 0 time and directly go to another state)
+- states may be added
+- states may be reordered (waiting for a later state and then a sooner state means the sooner state will take 0 time)
+"
+
+start_kdeinit_wrapper +kcminit_startup  (Wrapper exists to pass LD_LIBRARY_PATH the kdeinit4 despite it being setuid, which tries to drop risky parts of the environment)
+-> start_kdeinit
+ -> kdeinit
+  -> klauncher
+  -> kded
+   -> (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
+  -> kcminit phase 0
+ksmserver (kdeinit via kwrapper4)
+ -> kwin 
+ -calls-> klauncher::autostart(0)
+  . Plasma in phase0. Tells ksmserver to suspend further autostarts until it is ready.
+ -calls-> kcminit phase 1 
+ -calls-> klauncher::autostart(1)
+ . session restore
+ . login sound
+ -> autostart(2)
+ -> kded phase 2 
+ -> kcminit phase 2
+ . starts content of user's Autostart dirs
+ 
+ 
+Requirements (trying not to include ksmserver here but its effects)
+login snd->
+	   session-restore->
+	    user autostart->
+		    plasma->kwin->?(session-state)       ->(ex-session-state)->kded0->kcminit0->->kdeinit->kstartupconfigkeys
+						  ->kded1
+			   kded2->
+			kcminit2->
+			
+Does keys kcm still have a kcminit function.  Also emoticons seems to no longer use kcminit
+
+Packaging changes
++++++++++++++++++
+
+Big picture stuff to split
+--------------------------
+Akonadi -> pim-runtime
+Nepomuk -> -semantic packages
+Attica -> -social
+Activities -> activities
+
+Plasmoid remoting?
+Runners (see below)
+Plasma-netbook -> netbook
+      -> extra
+
+DONE split out nepomuk from kdebase4-runtime
+python-kde4 requires akonadi-runtime
+  split python-kde4 into python-kde4-akonadi, requires akonadi-runtime and py apps that use it can require that
+
+Activities
+----------
+Panel Applet (DONE)
+Desktop menu
+Desktop context menu
+window menu
+make kactivities4 Recommended only in kdebase4-workspace
+Switch Activity desktop mouse actions
+
+Systemsettings
+--------------	
+Definitely:
+
+kcm_kresources -> kdekpimlibs4
+kcm_attica in kdebase4-runtime
+kcm_emoticons 
+kcm_bell
+kcmlaunch
+Ensure notifications notifyrc files are split too
+powerdevilactivitiesconfig.desktop
+kcm_polkit*.desktop
+
+Consider removing configurability by taking out eg style, kdm kcms?
+
+KDED
+----
+input actions
+
+Plasma
+------
+Widgets
+~~~~~~~
+?
+Analogue clock
+Lock/Logout
+Wastebin
+
+Removed By others
+...
+Activities
+Activity Bar
+
+Essentials
+..........
+App Launcher [Menu]
+Battery Monitor
+Folder View
+Device Notifier
+Network Management
+Notifications
+Pager
+System Tray
+
+Utilities
+.........
+CPU Monitor
+Hard Disk Status
+Hardware Info BUGGED IN PANEL
+Hardware Temperature
+Memory Status
+Network Monitor
+
+Keyboard Layouts
+Search Box
+Quicklaunch
+Window List
+
+Toys
+....
+Web Browser
+
+Active
+......
+Current Application Control
+
+Dataengines
+~~~~~~~~~~~
+plasma-dataengine-geolocation.desktop
+plasma-dataengine-nowplaying.desktop
+plasma-dataengine-rss.desktop
+
+Sharing
+plasma-dataengine-share-addon-*.desktop
+
+plasma-dataengine-systemmonitor.desktop
+
+Runners
+~~~~~~~
+Activities (activityrunner)
+Bookmarks -> Konq
+Desktop Sessions (sessions)
+windowedwidgets FFS!
+
+Layouts
+~~~~~~~
+/usr/share/kde4/apps/plasma/layout-templates
+org.kde.plasma-desktop.photoActivity
+org.kde.plasma-desktop.SaL
+org.kde.plasma-netbook
+/usr/share/kde4/apps/plasma/layout-templates/org.kde.plasma-desktop.photoActivity: why is this in kdebase4-workspace-branding-openSUSE? These are duplicated in branding-upstream and branding-openSUSE
+
+Containments -> extra
+~~~~~~~~~~~~
+./services/plasma-containment-groupingdesktop.desktop
+./services/plasma-containment-groupingpanel.desktop
+plasma-containment-griddesktop.desktop
+plasma-containment-netpanel.desktop
+plasma-containment-newspaper.desktop
+plasma-containment-sal.desktop
+
+Desktop effects
+---------------
+(Enable but reduce selection)
+Basic features
+~~~~~~~~~~~~~~
+/usr/share/kde4/services/kwin/dashboard.desktop
+/usr/share/kde4/services/kwin/dashboard_config.desktop
+/usr/share/kde4/services/kwin/desktopgrid.desktop
+/usr/share/kde4/services/kwin/desktopgrid_config.desktop
+/usr/share/kde4/services/kwin/login.desktop
+/usr/share/kde4/services/kwin/login_config.desktop
+/usr/share/kde4/services/kwin/logout.desktop
+/usr/share/kde4/services/kwin/outline.desktop
+/usr/share/kde4/services/kwin/presentwindows.desktop
+/usr/share/kde4/services/kwin/presentwindows_config.desktop
+/usr/share/kde4/services/kwin/startupfeedback.desktop
+/usr/share/kde4/services/kwin/taskbarthumbnail.desktop
+
+Basic candy
+~~~~~~~~~~~
+/usr/share/kde4/services/kwin/blur.desktop
+/usr/share/kde4/services/kwin/blur_config.desktop
+/usr/share/kde4/services/kwin/boxswitch.desktop
+/usr/share/kde4/services/kwin/boxswitch_config.desktop
+/usr/share/kde4/services/kwin/dialogparent.desktop
+/usr/share/kde4/services/kwin/diminactive.desktop
+/usr/share/kde4/services/kwin/diminactive_config.desktop
+/usr/share/kde4/services/kwin/dimscreen.desktop
+/usr/share/kde4/services/kwin/fade.desktop
+/usr/share/kde4/services/kwin/highlightwindow.desktop
+/usr/share/kde4/services/kwin/minimizeanimation.desktop
+/usr/share/kde4/services/kwin/slidingpopups.desktop
+/usr/share/kde4/services/kwin/translucency.desktop
+/usr/share/kde4/services/kwin/translucency_config.desktop
+
+Extra candy
+~~~~~~~~~~~
+/usr/share/kde4/services/kwin/coverswitch.desktop
+/usr/share/kde4/services/kwin/coverswitch_config.desktop
+/usr/share/kde4/services/kwin/cube.desktop
+/usr/share/kde4/services/kwin/cube_config.desktop
+/usr/share/kde4/services/kwin/cubeslide.desktop
+/usr/share/kde4/services/kwin/cubeslide_config.desktop
+/usr/share/kde4/services/kwin/explosion.desktop
+/usr/share/kde4/services/kwin/fadedesktop.desktop
+/usr/share/kde4/services/kwin/fallapart.desktop
+/usr/share/kde4/services/kwin/flipswitch.desktop
+/usr/share/kde4/services/kwin/flipswitch_config.desktop
+/usr/share/kde4/services/kwin/glide.desktop
+/usr/share/kde4/services/kwin/glide_config.desktop
+/usr/share/kde4/services/kwin/magiclamp.desktop
+/usr/share/kde4/services/kwin/magiclamp_config.desktop
+/usr/share/kde4/services/kwin/scalein.desktop
+/usr/share/kde4/services/kwin/sheet.desktop
+/usr/share/kde4/services/kwin/slide.desktop
+/usr/share/kde4/services/kwin/slideback.desktop
+/usr/share/kde4/services/kwin/wobblywindows.desktop
+/usr/share/kde4/services/kwin/wobblywindows_config.desktop
+
+A11y
+~~~~
+/usr/share/kde4/services/kwin/invert.desktop
+/usr/share/kde4/services/kwin/invert_config.desktop
+/usr/share/kde4/services/kwin/lookingglass.desktop
+/usr/share/kde4/services/kwin/lookingglass_config.desktop
+/usr/share/kde4/services/kwin/magnifier.desktop
+/usr/share/kde4/services/kwin/magnifier_config.desktop
+/usr/share/kde4/services/kwin/snaphelper.desktop
+/usr/share/kde4/services/kwin/trackmouse.desktop
+/usr/share/kde4/services/kwin/trackmouse_config.desktop
+/usr/share/kde4/services/kwin/zoom.desktop
+/usr/share/kde4/services/kwin/zoom_config.desktop
+
+Tools
+~~~~
+/usr/share/kde4/services/kwin/mousemark.desktop
+/usr/share/kde4/services/kwin/mousemark_config.desktop
+/usr/share/kde4/services/kwin/resize.desktop
+/usr/share/kde4/services/kwin/resize_config.desktop
+/usr/share/kde4/services/kwin/screenshot.desktop
+/usr/share/kde4/services/kwin/showfps.desktop
+/usr/share/kde4/services/kwin/showfps_config.desktop
+/usr/share/kde4/services/kwin/showpaint.desktop
+/usr/share/kde4/services/kwin/thumbnailaside.desktop
+/usr/share/kde4/services/kwin/thumbnailaside_config.desktop
+/usr/share/kde4/services/kwin/windowgeometry.desktop
+/usr/share/kde4/services/kwin/windowgeometry_config.desktop
+
+
+Window decorations
+------------------
+/usr/share/apps/kwin
+Obsolete:
+b2.desktop
+laptop.desktop
+Keep for window grouping support:
+tabstrip.desktop
+
+
+Widget styles *
+-------------
+./apps/kstyle/themes/*.themerc
+No point removing these as kcm_style still shows the builtin Qt themes without them, just without description.
+
+Solid NetworkManagement backends
+--------------------------------
+All except NM09
+
+Menu clearup
+============
+Sorting?
+Sorting in kmenuedits as long as you place things after, NOT before, something else -> BUG.
+
+xterm needed by default?
+
+Existing work
+=============
+rule-project.org (defunct, use archive.org)
+kubuntu low fat
+
+Remove laggy animation tracking plasma widget item under mouse?
+
+Lisann's feedback
+=================
+Tidy up menus
+Design (icon in folderview text spacing)
+Don't assume generalisation of personal tastes.
+No point reducing things that people set up once
+Is there a way to set things up once then hide things (modal setup)
+Figure out the things that people have to face frequently and optimise there.
+
+Stuff still installed by pattern
+kdeartwork4-wallpapers-*
+kdebase4-workspace-plasma-calendar
+kdebase4-workspace-plasma-engine-akonadi
+kdepim4-runtime
+konqueror
+konqueror-plugins
+libkdeedu4-data
+libkeduvocdocument4
+marble*
+oxygen-gtk
+
+kactivities4 still required by kwin4
+zeitgeist pulled in by phonon now pulls inlots of gtk?
+
+akonadi-runtime (via plasma-engine-akonadi)
+kactivities4
+zeitgeist
+kdeartwork4-wallpapers*
+kdebase4-runtime-semantic
+kdebase4-runtime-social
+kdebase4-workspace-extra
+kdebase4-workspace-semanti
+kdepimlibs4 (req by kdebase4-workspace %kde4_pimlibs_requires)
+plasma-engine-akonadi (suppl. kdebase4-runtime)
+libgtk-2_0-0
+libgtk-3-0
+
+libkdeduvocdocument4
+marble (rec by plasma-addons)
+plasma-addons (rec by kdebase4-workspace)
+soprano-backend-virtuoso
+strigi (stale ymp? or <repository recommended="true"> in .ymp?
+virtuoso-server
+zeitgeist (a gstreamer plugin?)
+
+kmail and any other PIM using nepomuk needs to at least Recommend n kdebase4-runtime-semantic
+DONE via kdepim4-runtime
+and this must pull in soprano-backend-virtuoso
+
+Stuff pulled in by pattern with zypper in -t pattern --no-recommends KDE4-KLYDE:
+kactivities4
+kdepimlibs4
+Probably still pulled in by kdebase4-workspace 4.8.1 as 4.8.2 in klyde has none of its deps available - aggregate?
+
+split out konq components needed by rekonq?
+DONE kdelibs r424 adds spurious runtime requires because of rpmlint
+libphonon4 requires libqzeitgeist0 - runtim components from where?
+kio_http_cache_cleaner does not terminate
+DONE kaccess does not terminate
+
+kcm_kded crashes if a disabled stopped service is enabled THEN started
+because selection is cleared by enabling service but button is not disabled
+
+disable krunner plugins?
