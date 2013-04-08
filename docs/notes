@@ -402,3 +402,6 @@ kcm_kded crashes if a disabled stopped service is enabled THEN started
 because selection is cleared by enabling service but button is not disabled
 
 disable krunner plugins?
+
+kwin tabbox allocates 3MB extra on first alt-tab.
+
