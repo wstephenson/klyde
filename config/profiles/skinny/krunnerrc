@@ -1,0 +1,17 @@
+[Plugins]
+Kill RunnerEnabled=false
+PowerDevilEnabled=false
+bookmarksEnabled=false
+calculatorEnabled=false
+desktopsessionsEnabled=true
+locationsEnabled=false
+nepomuksearchEnabled=false
+org.kde.activitiesEnabled=false
+placesEnabled=false
+plasma-desktopEnabled=false
+recentdocumentsEnabled=false
+servicesEnabled=false
+shellEnabled=true
+solidEnabled=false
+webshortcutsEnabled=false
+windowsEnabled=false
