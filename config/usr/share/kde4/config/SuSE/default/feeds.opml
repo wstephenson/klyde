@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+ <head>
+  <text/>
+ </head>
+ <body>
+  <outline isOpen="true" id="2115085559" text="openSUSE">
+   <outline title="openSUSE News" useCustomFetchInterval="false" version="RSS" maxArticleAge="60" description="The latest stuff happening in the openSUSE universe" htmlUrl="http://news.opensuse.org" xmlUrl="http://news.opensuse.org/?feed=rss2" fetchInterval="30" type="rss" id="1514679444" archiveMode="globalDefault" maxArticleNumber="1000" text="openSUSE News"/>
+   <outline title="Planet openSUSE" useCustomFetchInterval="false" version="RSS" maxArticleAge="60" description="Planet openSUSE - http://planet.opensuse.org" htmlUrl="http://planet.opensuse.org" xmlUrl="http://planet.opensuse.org/en/rss20.xml" fetchInterval="30" type="rss" id="1210090784" archiveMode="globalDefault" maxArticleNumber="1000" text="Planet openSUSE"/>
+   <outline title="SUSE Security Annoncements" useCustomFetchInterval="false" version="RSS" maxArticleAge="60" description="Regular information about security issues concerning SUSE Linux" htmlUrl="http://www.novell.com/linux/security/securitysupport.html" xmlUrl="http://www.novell.com/linux/security/suse_security.xml" fetchInterval="30" type="rss" id="758859048" archiveMode="globalDefault" maxArticleNumber="1000" text="SUSE Security Annoncements"/>
+  </outline>
+  <outline isOpen="true" id="697643936" text="KDE">
+   <outline title="KDE Dot News" useCustomFetchInterval="false" version="RSS" maxArticleAge="0" description="" htmlUrl="http://www.kdenews.org" xmlUrl="http://www.kde.org/dotkdeorg.rdf" fetchInterval="0" type="rss" id="1819780050" archiveMode="globalDefault" maxArticleNumber="0" text="KDE Dot News"/>
+   <outline title="Planet KDE" useCustomFetchInterval="false" version="RSS" maxArticleAge="0" description="Planet KDE - http://planetKDE.org/" htmlUrl="http://planetKDE.org/" xmlUrl="http://planetkde.org/rss20.xml" fetchInterval="0" type="rss" id="1178895480" archiveMode="globalDefault" maxArticleNumber="0" text="Planet KDE"/>
+   <outline title="KDE Apps" useCustomFetchInterval="false" version="RSS" maxArticleAge="0" description="KDE-Look.org: Applications for your KDE-Desktop" htmlUrl="http://kde-apps.org" xmlUrl="http://www.kde.org/dot/kde-apps-content.rdf" fetchInterval="0" type="rss" id="1996522987" archiveMode="globalDefault" maxArticleNumber="0" text="KDE Apps"/>
+   <outline title="KDE Look" useCustomFetchInterval="false" version="RSS" maxArticleAge="0" description="KDE-Look.org: Eyecandy for your KDE-Desktop" htmlUrl="http://kde-look.org" xmlUrl="http://www.kde.org/kde-look-content.rdf" fetchInterval="0" type="rss" id="1443043936" archiveMode="globalDefault" maxArticleNumber="0" text="KDE Look"/>
+  </outline>
+ </body>
+</opml>
+

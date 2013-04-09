@@ -1,0 +1,13 @@
+[Event/touchpadError]
+Action=
+Execute=
+KTTS=
+Logfile=
+Sound=
+
+[Event/touchpadOff]
+Action=
+Execute=
+KTTS=
+Logfile=
+Sound=

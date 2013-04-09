@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Application;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
+Name=Firefox
+Comment=Web Browser
+TryExec=firefox
+Exec=firefox %u
+Icon=firefox
+Terminal=false
+MimeType=text/html;application/xhtml+xml
+Type=Application
+OnlyShowIn=KDE;
+

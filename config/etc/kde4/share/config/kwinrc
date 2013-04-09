@@ -1,0 +1,11 @@
+[Desktops]
+Number=1
+
+[Compositing]
+Enabled=false
+
+[Style]
+PluginLib=kwin3_plastik
+
+[Compositing]
+GraphicsSystem=raster

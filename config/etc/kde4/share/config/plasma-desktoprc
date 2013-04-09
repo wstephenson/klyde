@@ -1,0 +1,4 @@
+[Defaults]
+wallpaper=/usr/share/wallpapers/openSUSEdefault/contents/images/1920x1200.jpg
+plainClockColor=7,33,0
+containment=desktop

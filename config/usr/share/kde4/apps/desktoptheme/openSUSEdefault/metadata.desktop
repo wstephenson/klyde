@@ -1,0 +1,20 @@
+[Desktop Entry]
+X-SuSE-translate=t
+Name=Air openSUSE
+Comment=A breath of fresh air
+
+
+X-KDE-PluginInfo-Author=The Oxygen Project
+X-KDE-PluginInfo-Email=kde-artists@kde.org
+X-KDE-PluginInfo-Name=openSUSEdefault
+X-KDE-PluginInfo-Version=0.9
+X-KDE-PluginInfo-Website=http://plasma.kde.org
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+
+[Settings]
+FallbackTheme=default
+
+

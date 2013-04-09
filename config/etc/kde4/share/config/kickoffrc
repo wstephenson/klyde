@@ -1,0 +1,11 @@
+[Branding]
+Homepage=http://www.opensuse.org/
+
+[Favorites]
+FavoriteURLs=/usr/share/applications/kde4/rekonq.desktop,/usr/share/applications/kde4/Kontact.desktop,/usr/share/applications/writer.desktop,/usr/share/applications/kde4/amarok.desktop,/usr/share/applications/kde4/digikam.desktop,/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/kde4/Help.desktop,/usr/share/applications/kde4/konsole.desktop
+
+[KRunner]
+loadAll=false
+
+[KRunner][PlasmaRunnerManager]
+pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations

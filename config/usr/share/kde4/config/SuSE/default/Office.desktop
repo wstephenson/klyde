@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Office
+Protocols=file;ftp;http;
+MimeType=application/x-scalc;application/x-smf;application/x-sdraw;application/x-sds;application/x-swriter;application/x-sgl;application/x-sda;
+Exec=libreoffice
+Icon=libreoffice-startcenter
+Path=$HOME
+Type=Application
+Terminal=0
+StartupNotify=false
+OnlyShowIn=KDE;

@@ -1,0 +1,42 @@
+[Main Window Settings Toolbar bookmarkToolBar]
+Hidden=true
+IconSize=16
+Index=3
+ToolButtonStyle=TextBesideIcon
+
+[Main Window Settings Toolbar extraToolBar]
+Index=1
+ToolButtonStyle=TextUnderIcon
+
+[Main Window Settings Toolbar htmlToolBar]
+Index=4
+ToolButtonStyle=IconOnly
+
+[Main Window Settings Toolbar locationToolBar]
+Index=2
+ToolButtonStyle=IconOnly
+
+[Main Window Settings Toolbar mainToolBar]
+Index=0
+
+[Main Window Settings Toolbar speechToolbar]
+Index=5
+ToolButtonStyle=TextUnderIcon
+
+[Profile]
+FullScreen=false
+Name[$e]=Web Browsing
+RootItem=Tabs0
+Tabs0_Children=ViewT0
+Tabs0_activeChildIndex=0
+ViewT0_LinkedView=false
+ViewT0_LockedLocation=false
+ViewT0_PassiveMode=false
+ViewT0_ServiceName=khtml
+ViewT0_ServiceType=text/html
+ViewT0_ToggleView=false
+ViewT0_URL[$e]=http://www.opensuse.org/
+XMLUIFile=konqueror.rc
+
+[Profile][Main Window Settings]
+State=AAAA/wAAAAD9AAAAAAAABUAAAAMAAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAMAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAABcAAAAAAAAAAAAAAAGABlAHgAdAByAGEAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHgBsAG8AYwBhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAFwAAAD0AAAAAAAAAAAAAAAAgAAAAMAAAAeAGIAbwBvAGsAbQBhAHIAawBUAG8AbwBsAEIAYQByAAAAAAAAAAVAAAAAAAAAAAAAAAAWAGgAdABtAGwAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAGgBzAHAAZQBlAGMAaABUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=

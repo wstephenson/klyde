@@ -1,0 +1,41 @@
+<!DOCTYPE xbel ><xbel folded="no" >
+ <folder folded="no" >
+  <title>SUSE</title>
+  <bookmark href="http://www.opensuse.org/" >
+   <title>openSUSE Project</title>
+  </bookmark>
+  <bookmark href="http://news.opensuse.org/" >
+   <title>openSUSE News</title>
+  </bookmark>
+  <bookmark href="http://forums.opensuse.org/" >
+   <title>openSUSE Forums</title>
+  </bookmark>
+  <bookmark href="http://en.opensuse.org/Documentation" >
+   <title>openSUSE Documentation</title>
+  </bookmark>
+  <bookmark href="http://software.opensuse.org/search?baseproject=openSUSE:11.3" >
+   <title>openSUSE Online Software Repositories</title>
+  </bookmark>
+  <bookmark href="http://en.opensuse.org/How_to_Participate" >
+   <title>How to Participate in openSUSE</title>
+  </bookmark>
+  <bookmark href="http://planet.opensuse.org/" >
+   <title>Planet openSUSE</title>
+  </bookmark>
+  <bookmark href="http://www.novell.com/linux" >
+   <title>SUSE Linux Enterprise</title>
+  </bookmark>
+  <bookmark href="http://www.novell.com/communities/coolsolutions/" >
+   <title>Cool Solutions Community</title>
+  </bookmark>
+  <bookmark href="http://www.novell.com/support/products/suselinux/" >
+   <title>Support</title>
+  </bookmark>
+ </folder>
+ <bookmark href="http://www.planetkde.org/" >
+  <title>Planet KDE</title>
+ </bookmark>
+ <bookmark href="http://en.opensuse.org/KDE">
+     <title>KDE at openSUSE</title>
+ </bookmark>
+</xbel>

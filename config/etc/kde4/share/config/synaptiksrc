@@ -1,0 +1,10 @@
+[Automatic Touchpad control]
+IdleTime=0.8
+SwitchOffOnKeyboardActivity=true
+
+[Scrolling]
+CoastingSpeed=15
+HorizontalScrollingDistance=1
+
+[Tapping]
+OneFingerButton=LeftMouseButton

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=pin
+Name=openSUSE Webpin Search
+Query=http://packages.opensuse-community.org/index.jsp?searchTerm=\\{@}&distro=openSUSE_113
+ServiceTypes=SearchProvider
+Type=Service

@@ -1,0 +1,4 @@
+#! /bin/sh
+
+test -s /etc/preload.d/kde && /sbin/preload /etc/preload.d/kde
+

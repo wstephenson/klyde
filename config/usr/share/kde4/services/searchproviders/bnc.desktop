@@ -1,0 +1,8 @@
+[Desktop Entry]
+Charset=
+Hidden=false
+Keys=bnc
+Name=Novell Bugzilla
+Query=https://bugzilla.novell.com/show_bug.cgi?id=\\{@}
+ServiceTypes=SearchProvider
+Type=Service

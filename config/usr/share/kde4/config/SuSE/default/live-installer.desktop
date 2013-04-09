@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+
+Icon=yast-live-install
+Exec=/sbin/yast2 live-installer 
+
+Name=Install
+GenericName=Install running system to your hard drive
+
+X-KDE-SubstituteUID=true

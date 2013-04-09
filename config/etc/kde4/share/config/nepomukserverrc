@@ -1,0 +1,10 @@
+[Basic Settings]
+Configured repositories=main
+Start Nepomuk=true
+
+[Service-nepomukfileindexer]
+autostart=false
+
+[main Settings]
+Used Soprano Backend=virtuosobackend
+Maximum memory=20

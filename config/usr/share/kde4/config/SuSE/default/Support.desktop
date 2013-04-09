@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Online Help
+Encoding=UTF-8
+Icon=Support
+Type=Link
+URL=http://help.opensuse.org/
+OnlyShowIn=KDE;

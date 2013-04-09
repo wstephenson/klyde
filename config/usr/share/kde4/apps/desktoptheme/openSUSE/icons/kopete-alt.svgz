@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Karbon, part of Calligra: http://www.calligra.org/karbon -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24pt" height="24pt">
+<defs/>
+<g id="layer1">
+  <g id="kopete-offline" transform="translate(-41.2633, -1.13008)" fill="none">
+   <rect id="rect9896" transform="translate(0.625, 0.625)" fill="#ffffff" fill-rule="evenodd" opacity="0.00000000000" width="24.00000000000pt" height="24.00000000000pt"/>
+   <g id="g9878" transform="translate(3.625, 3.13105)" fill="none">
+    <path id="path9775-6" transform="translate(12.0029, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0.004 0L0 3.99999"/>
+    <path id="path9777-0" transform="translate(12.003, 18.4918)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M5.55075 0L0 3.9935"/>
+    <g id="g9863" transform="" fill="none">
+     <path id="path12976-2-2" transform="translate(22, 6.1404)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L0 8.9909"/>
+     <path id="path9769-9" transform="translate(5.26494, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 1e-05L6.72241 0"/>
+     <path id="path9771-9" transform="translate(2, 6.02905)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L0 8.9144"/>
+     <path id="path9783-2" transform="matrix(0.0959964 0.102444 -0.0961367 0.102594 2 15.1645)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9788-7" transform="matrix(-0.0959964 -0.102444 0.0961367 -0.102594 22 5.82341)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9790-6" transform="matrix(-0.0959964 0.102444 0.0961367 0.102594 22 15.1645)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9792-1" transform="matrix(0.0959964 -0.102444 -0.0961367 -0.102594 2.00602 5.82341)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9796-3" transform="translate(5.43555, 2.49396)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L13.4835 0"/>
+     <path id="path9798-2" transform="translate(17.7606, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L1.11951 0"/>
+    </g>
+    <g id="g9874" transform="translate(6.41119, 4.87285)" fill="none">
+     <path id="path7289-4" transform="translate(0.579235, 0.625)" fill="#5d992d" d="M5.02297 1.51545e-10C3.74019 -9.99985e-06 2.43408 0.4951 1.46047 1.46875C-0.486822 3.41604 -0.486822 6.58396 1.46047 8.53125C3.40769 10.4785 6.607 10.4785 8.55422 8.53125C10.5015 6.58396 10.5015 3.41597 8.55422 1.46875C7.58061 0.49514 6.30575 1.00002e-05 5.02297 1.51545e-10ZM2.14797 4.28125L7.86672 4.28125C8.26241 4.28125 8.58547 4.60431 8.58547 5C8.58547 5.39569 8.26241 5.71875 7.86672 5.71875L2.14797 5.71875C1.75228 5.71875 1.42922 5.39569 1.42922 5C1.42922 4.60431 1.75228 4.28125 2.14797 4.28125Z"/>
+    </g>
+   </g>
+  </g>
+  <g id="kopete" transform="translate(-0.624997, -0.625004)" fill="none">
+   <rect id="rect9918" transform="translate(0.625, 0.625)" fill="#ffffff" fill-rule="evenodd" opacity="0.00000000000" width="24.00000000000pt" height="24.00000000000pt"/>
+   <g id="g9920" transform="translate(3.625, 3.13105)" fill="none">
+    <path id="path9922" transform="translate(12.0029, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0.004 0L0 3.99999"/>
+    <path id="path9924" transform="translate(12.003, 18.4918)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M5.55075 0L0 3.9935"/>
+    <g id="g9926" transform="" fill="none">
+     <path id="path9928" transform="translate(22, 6.1404)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L0 8.9909"/>
+     <path id="path9930" transform="translate(5.26494, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 1e-05L6.72241 0"/>
+     <path id="path9932" transform="translate(2, 6.02905)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L0 8.9144"/>
+     <path id="path9934" transform="matrix(0.0959964 0.102444 -0.0961367 0.102594 2 15.1645)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9936" transform="matrix(-0.0959964 -0.102444 0.0961367 -0.102594 22 5.82341)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9938" transform="matrix(-0.0959964 0.102444 0.0961367 0.102594 22 15.1645)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9940" transform="matrix(0.0959964 -0.102444 -0.0961367 -0.102594 2.00602 5.82341)" fill="none" stroke="#becfd2" stroke-width="14.25040054000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M32.5 0C23.5254 8.97463 8.97463 8.97463 0 0C0 0 0 0 0 0"/>
+     <path id="path9942" transform="translate(5.43555, 2.49396)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L13.4835 0"/>
+     <path id="path9944" transform="translate(17.7606, 18.494)" fill="none" stroke="#becfd2" stroke-width="2.00000000000" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4.00000000000" d="M0 0L1.11951 0"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

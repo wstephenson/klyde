@@ -1,0 +1,25 @@
+## Path:        Desktop
+## Description: prepare global sycoca database for faster first startup
+## Type:        list(yes,initial,no)
+## Default:     initial
+#
+# building a global sycoca database, which can be used at first user
+# login in KDE
+#
+KDE_BUILD_GLOBAL_SYCOCA="initial"
+
+## Type:        yesno
+## Default:     yes
+#
+# To disable IPv6 support within KDE. It might solve large timeouts due to
+# broken servers which claim to have IPv6 support, but do not respond.
+#
+KDE_USE_IPV6="yes"
+
+## Type:        yesno
+## Default:     yes
+#
+# IDN support can get disabled to avoid DNS phishing for example.
+#
+KDE_USE_IDN="yes"
+

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# http://en.opensuse.org/User:Mvidner
+
+DIR=""
+if [ "$1" == "-S" ]; then
+   DIR="Y"
+   shift
+fi
+
+# 0.6.10 needed for --type=Plaindir
+ZYPPER=/usr/bin/zypper
+
+# the temp machinery is necessary because
+# we support installing more rpms from different directories
+
+TEMP=$(/bin/mktemp -d)
+
+function make_link {
+  local N="`cat "$1" | rpm -qp --queryformat '%{NAME}' -- -`"
+  ARG="$ARG $N"
+  ln -sf "$1" $TEMP/$N.rpm
+}
+
+IFS=""
+ARG=""
+FILES=""
+if [ "$DIR" ]; then
+  for i in $1/*.rpm; do
+    make_link "$i"
+  done
+else
+  for i in "$@"; do
+    make_link "$i"
+  done
+fi
+unset IFS
+
+$ZYPPER --non-interactive service-add --type=Plaindir dir://$TEMP _krpmview_temporary </dev/null
+
+/sbin/yast2 -i $ARG
+
+$ZYPPER --non-interactive service-delete _krpmview_temporary </dev/null
+rm -rf $TEMP

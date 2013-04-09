@@ -1,0 +1,3 @@
+# replace sysinfo icon if still on Destop with KInfoCenter one
+Id=kde4_10
+Script=sysinfo_to_kinfocenter.sh,sh

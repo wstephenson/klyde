@@ -1,0 +1,11 @@
+[Channel 0]
+Name=#opensuse
+
+[Server 0]
+Server=irc.opensuse.org
+Port=8001
+
+[ServerGroup 0]
+AutoJoinChannels=Channel 0
+ServerList=Server 0
+Name=openSUSE IRC
