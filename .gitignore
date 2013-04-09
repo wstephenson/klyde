@@ -21,3 +21,5 @@ Makefile
 
 # vim backup files
 *~
+# vim swap files
+*.swp
