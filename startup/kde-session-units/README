@@ -1,0 +1,18 @@
+Systemd unit files for a native kde session
+
+HOWTO
+mkdir -p .config/systemd/user
+ln -sf /usr/lib/systemd/user/kdenative.target .config/systemd/user/default.target
+
+As root 
+Make systemdkde.target.wants in /usr/lib/systemd/user
+contains link to ../kdeinit.service
+
+systemctl --system daemon-reload
+systemctl start user-session@1001.service
+
+Currently I am not installing to system location, manually creating symlinks to a user-local installation.
+
+TIPS
+Checking the status of a service from outside the session:
+$ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/dbus/user_bus_socket systemctl --user status kdeinit.service
