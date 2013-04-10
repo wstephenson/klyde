@@ -1,9 +1,13 @@
 [Unit]
 Description=KDE Session Manager
+After=kdeinit.service
 Requires=kdeinit.service
 
 [Service]
 Type=dbus
 BusName=org.kde.ksmserver
+Environment=DISPLAY=:1
 ExecStart=@KDE4_BIN_INSTALL_DIR@/kwrapper4 @KDE4_BIN_INSTALL_DIR@/ksmserver
+#kwrapper starts ksmserver via kdeinit, so RemainAfterExit is needed
+RemainAfterExit=true
 

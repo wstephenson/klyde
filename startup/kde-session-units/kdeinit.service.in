@@ -13,7 +13,8 @@ ExecStart=@KDE4_LIBEXEC_INSTALL_DIR@/start_kdeinit_wrapper +kcminit_startup
 Environment=DISPLAY=:1 LD_BIND_NOW=true
 #Environment=XDG_RUNTIME_DIR=/run/user/%I
 #Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%i/dbus/user_bus_socket
-
+#The wrapper forks and exits,  so RemainAfterExit is needed
+RemainAfterExit=true
 
 [Install]
 WantedBy=systemdkde.target
