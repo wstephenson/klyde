@@ -55,26 +55,6 @@ Note however that these states should not be relied on too much:
 - states may be reordered (waiting for a later state and then a sooner state means the sooner state will take 0 time)
 "
 
-start_kdeinit_wrapper +kcminit_startup  (Wrapper exists to pass LD_LIBRARY_PATH the kdeinit4 despite it being setuid, which tries to drop risky parts of the environment)
--> start_kdeinit
- -> kdeinit
-  -> klauncher
-  -> kded
-   -> (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
-  -> kcminit phase 0
-ksmserver (kdeinit via kwrapper4)
- -> kwin 
- -calls-> klauncher::autostart(0)
-  . Plasma in phase0. Tells ksmserver to suspend further autostarts until it is ready.
- -calls-> kcminit phase 1 
- -calls-> klauncher::autostart(1)
- . session restore
- . login sound
- -> autostart(2)
- -> kded phase 2 
- -> kcminit phase 2
- . starts content of user's Autostart dirs
- 
  
 Requirements (trying not to include ksmserver here but its effects)
 login snd->
