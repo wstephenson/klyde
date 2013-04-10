@@ -1,5 +1,5 @@
 [Unit]
 Description=The KDE Desktop Environment (native systemd session)
-Wants=ksmserver.service
+Wants=ksmserver.service ksplashx.service
 AllowIsolate=true
 
