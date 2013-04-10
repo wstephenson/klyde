@@ -1,18 +1,18 @@
 [Unit]
 Description=KDE Init System
-Requires=dbus.socket
-Requires=xorg.target
-After=xorg.target
+Requires=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service lnusertemp@tmp.service
+After=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service lnusertemp@tmp.service
+
 
 [Service]
 #Type=simple
 Type=dbus
 BusName=org.kde.klauncher
-#Need to use cmake to generate paths
 ExecStart=@KDE4_LIBEXEC_INSTALL_DIR@/start_kdeinit_wrapper +kcminit_startup
 # Do these need to be added to every service unit file?
+# Need to set DISPLAY as long as we're running on :1 alongside a production session
 Environment=DISPLAY=:1
-Environment=XDG_RUNTIME_DIR=/run/user/%I
+#Environment=XDG_RUNTIME_DIR=/run/user/%I
 #Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%i/dbus/user_bus_socket
 
 

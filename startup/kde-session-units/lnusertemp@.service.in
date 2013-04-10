@@ -1,0 +1,6 @@
+[Unit]
+Description=Sets up KDE session symlinks
+
+[Service]
+ExecStart=@KDE4_LIBEXEC_INSTALL_DIR@/lnusertemp %I
+Type=oneshot

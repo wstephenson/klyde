@@ -9,8 +9,8 @@ SET(inFiles
    #activitymanager.service
    #contour.service
     kdeinit.service
+    lnusertemp@.service
     #ksmserver.service
-    #lnusertemp-cache.service
     #lnusertemp-socket.service
     #lnusertemp-tmp.service
     #nepomuk.service
