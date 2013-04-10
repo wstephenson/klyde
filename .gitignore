@@ -21,5 +21,9 @@ Makefile
 
 # vim backup files
 *~
-# vim swap files
+# editor swap files
 *.swp
+*.kate-swp
+
+startup/kde-session-units/build
+startup/kde-session-units/install
