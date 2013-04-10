@@ -6,15 +6,9 @@ FILE(GLOB systemd_services *.service *.target)
 FILE(GLOB systemd_services_in *.service.in)
 
 SET(inFiles
-   #activitymanager.service
-   #contour.service
     kdeinit.service
+    ksmserver.service
     lnusertemp@.service
-    #ksmserver.service
-    #lnusertemp-socket.service
-    #lnusertemp-tmp.service
-    #nepomuk.service
-    #setup-kde-skel.service
     )
 
 # FindKDE4Internal defines KDE4_LIBEXEC_INSTALL_DIR
