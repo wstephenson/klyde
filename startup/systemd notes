@@ -103,6 +103,9 @@ Unset env vars
 
 User session stuff
 ==================
+
+systemctl --user enable creates symlinks in ~/.config, not system wide, like you'd want.
+
 http://lists.freedesktop.org/archives/systemd-devel/2013-February/009119.html :
 "One 'systemd --user' instance (as per systemd's TODO: started by logind using
 user at .service, on behalf of pam_systemd) and one 'dbus-daemon --session'
@@ -118,6 +121,7 @@ http://dantti.wordpress.com/2013/02/27/1-2-3-plasma/ Comment from Tom Gundersen
 
 How can systemd tell existing services to do something, when they can perform phased actions?
 
+
 Can systemd be extended with a plugin to make it be kdeinit?
 
 Can a plugin do XSMP session management?
@@ -131,6 +135,8 @@ systemctl --user start kde.target (different targets)
 How to install user unit so the dependencies are respected?
 
 Logind instantiates only one user session per user, not per display.  This would prevent multiple desktop sessions on distinct displays.  
+
+Systemd needs to be told when the process it starts for a unit exits while the service is still running.  This is the case for any kdeinit and any kwrapper-started programs.
 
 PROGRESS
 Packaged
