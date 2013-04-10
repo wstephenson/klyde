@@ -1,0 +1,9 @@
+[Unit]
+Description=KDE Session Manager
+Requires=kdeinit.service
+
+[Service]
+Type=dbus
+BusName=org.kde.ksmserver
+ExecStart=@KDE4_BIN_INSTALL_DIR@/kwrapper4 @KDE4_BIN_INSTALL_DIR@/ksmserver
+
