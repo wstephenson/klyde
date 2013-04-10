@@ -1,0 +1,42 @@
+Legacy Startup using startkde
+=============================
+
+1) Check for existing session on this X display
+2) Create startupconfigkeys and run kstartupconfig4 to read settings into env vars
+3) set mouse theme
+4) apply krandr settings
+5) set force fonts dpi
+6) run configured splash screen impl
+7) Source env files
+8) Create links to persistent tmp cache socket dirs in $KDEHOME
+8) launch dbus if needed, test result
+9) set KDE_SESSION_VERSION used by kfmclient in case it are running in a foreign kde version session KDE_FULL_SESSION KDE_SESSION_UID  used by kded 
+10) start kdeinit
+11) start ksmserver
+
+kdeinit/ksmserver breakdown
+===========================
+
+start_kdeinit_wrapper +kcminit_startup  (Wrapper exists to pass LD_LIBRARY_PATH the kdeinit4 despite it being setuid, which tries to drop risky parts of the environment)
+-> start_kdeinit
+ -> kdeinit
+  -> klauncher
+  -> kded
+   -> (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
+  -> kcminit phase 0
+ksmserver (kdeinit via kwrapper4)
+ -> kwin 
+ -calls-> klauncher::autostart(0)
+  . Plasma in phase0. Tells ksmserver to suspend further autostarts until it is ready.
+ -calls-> kcminit phase 1 
+ -calls-> klauncher::autostart(1)
+ . session restore
+ . login sound
+ -> autostart(2)
+ -> kded phase 2 
+ -> kcminit phase 2
+ . starts content of user's Autostart dirs
+ 
+Systemd native KDE startup
+==========================
+We skip 1-7 for now, because they are optional.
