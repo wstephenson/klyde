@@ -1,0 +1,8 @@
+[Unit]
+Description=Desktop Splash Screen
+After=xorg.target
+Requires=xorg.target
+
+[Service]
+ExecStart=@KDE4_BIN_INSTALL_DIR@/ksplashx Default
+Environment=DISPLAY=:1

@@ -1,7 +1,7 @@
 [Unit]
 Description=KDE Init
 Requires=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service lnusertemp@tmp.service
-After=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service lnusertemp@tmp.service
+After=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service lnusertemp@tmp.service ksplashx.service
 
 
 [Service]

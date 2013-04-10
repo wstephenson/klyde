@@ -7,6 +7,7 @@ FILE(GLOB systemd_services_in *.service.in)
 
 SET(inFiles
     kdeinit.service
+    ksplashx.service
     ksmserver.service
     lnusertemp@.service
     )
