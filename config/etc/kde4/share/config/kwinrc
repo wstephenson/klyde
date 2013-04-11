@@ -5,7 +5,7 @@ Number=1
 Enabled=false
 
 [Style]
-PluginLib=kwin3_plastik
+PluginLib=kwin3_oxygen
 
 [Compositing]
 GraphicsSystem=raster
