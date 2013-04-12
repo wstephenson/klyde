@@ -1,8 +1,8 @@
 [Desktop Entry]
-X-SUSE-Klyde-Settings-Parent_Category=personal
 Type=Service
 X-KDE-ServiceTypes=KlydeSystemSettingsCategory
 X-SUSE-Klyde-System-Settings-Category=accessibility
+X-SUSE-Klyde-System-Settings-Parent-Category=personal
 Icon=preferences-desktop-accessibility
 
 Name=Accessibility
