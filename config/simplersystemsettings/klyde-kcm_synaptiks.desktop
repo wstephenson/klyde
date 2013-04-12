@@ -1,0 +1,21 @@
+[Desktop Entry]
+X-SUSE-Klyde-System-Settings-Parent-Category=keyboard-and-mouse
+Exec=kcmshell4 kcm_synaptiks
+Icon=synaptiks
+Type=Service
+
+X-DocPath=synaptiks/index.html
+
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=synaptiks/kcm_synaptiks.py
+
+X-KDE-Weight=65
+
+Name=Touchpad
+Name[de]=Touchpad
+
+Comment=Touchpad configuration
+Comment[de]=Touchpad-Konfiguration
+

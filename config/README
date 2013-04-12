@@ -1,1 +1,3 @@
 Work around configuration, including simplified configuration UIs and metadata
+
+simplersystemsettings: metadata for a reduced set of system settings modules. requires a patched systemsettings (in OBS)

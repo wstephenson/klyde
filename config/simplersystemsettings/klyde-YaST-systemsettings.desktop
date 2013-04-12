@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SUSE-Klyde-System-Settings-Parent-Category=system
+Type=Service
+Name=YaST
+Icon=yast
+GenericName=Administrator Settings
+Exec=kdesu -c /sbin/yast2
+X-KDE-ServiceTypes=SystemSettingsExternalApp
+
