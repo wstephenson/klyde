@@ -1,6 +1,8 @@
 [Windeco]
 BlendTitlebarColors=true
-ShowStripes=true
+AnimationsEnabled=false
+DrawTitleOutline=true
+BlendColor=Solid Color
 
 [ActiveShadow]
 InnerColor=190,239,175
