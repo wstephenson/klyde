@@ -97,6 +97,7 @@ ColorScheme=openSUSE
 Name=openSUSE
 shadeSortColumn=true
 BrowserApplication=rekonq
+widgetStyle=plastique
 
 [KDE]
 contrast=5
@@ -126,3 +127,6 @@ ChangeCursor=true
 
 [KFileDialog Settings]
 Breadcrumb Navigation=true
+
+[KDE-Global GUI Settings]
+GraphicEffectsLevel=0
