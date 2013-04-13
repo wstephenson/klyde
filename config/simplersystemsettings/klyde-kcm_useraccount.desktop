@@ -4,7 +4,7 @@ Icon=preferences-desktop-user-account
 Categories=KDE;X-KDE-settings-security;
 X-KDE-ParentApp=kcontrol
 X-KDE-Library=kcm_useraccount
-X-SUSE-Klyde-System-Settings-Parent-Category=account
+X-SUSE-Klyde-System-Settings-Parent-Category=accounts
 X-DocPath=kdepasswd/index.html
 
 Type=Service
