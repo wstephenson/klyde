@@ -1,6 +1,6 @@
 [Basic Settings]
 Configured repositories=main
-Start Nepomuk=true
+Start Nepomuk=false
 
 [Service-nepomukfileindexer]
 autostart=false
