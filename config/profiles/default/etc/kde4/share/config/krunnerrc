@@ -1,30 +1,61 @@
 [Plugins]
+# KLYDE OFF OPT-IN
 Audio Player Control RunnerEnabled=false
+# KLYDE OFF OPT-IN
 CharacterRunnerEnabled=false
+# KLYDE OFF OPT-IN
 DictionaryEnabled=false
+# KLYDE OFF OPT-IN
 Kill RunnerEnabled=false
+# KLYDE OFF OPT-IN
 PowerDevilEnabled=false
+# KLYDE OFF OPT-IN
 Spell CheckerEnabled=false
+# KLYDE OFF OPT-IN
 bookmarksEnabled=false
+# KLYDE OFF OPT-IN
 browserhistoryEnabled=false
-calculatorEnabled=true
+# KLYDE OFF OPT-IN
+calculatorEnabled=false
+# KLYDE OFF OPT-IN
 desktopsessionsEnabled=false
+# KLYDE OFF OPT-IN
 konquerorsessionsEnabled=false
+# KLYDE OFF OPT-IN
 konsolesessionsEnabled=false
+# KLYDE OFF OPT-IN
 locationsEnabled=false
+# KLYDE OFF OPT-IN
 marbleEnabled=false
+# KLYDE OFF OPT-IN
 nepomuksearchEnabled=false
+# KLYDE OFF OPT-IN
 org.kde.datetimeEnabled=false
+# KLYDE OFF OPT-IN
+org.kde.windowedwidgetsEnabled=false
+# KLYDE OFF OPT-IN
 placesEnabled=false
+# KLYDE OFF OPT-IN
 plasma-desktopEnabled=false
+# KLYDE OFF OPT-IN
 recentdocumentsEnabled=false
+# KLYDE OFF OPT-IN
 servicesEnabled=true
+# KLYDE OFF OPT-IN
 shellEnabled=true
+# KLYDE OFF OPT-IN
 solidEnabled=false
+# KLYDE OFF OPT-IN
 techbaseEnabled=false
+# KLYDE OFF OPT-IN
 unitconverterEnabled=false
-webshortcutsEnabled=true
+# KLYDE OFF OPT-IN
+webshortcutsEnabled=false
+# KLYDE OFF OPT-IN
 wikipediaEnabled=false
+# KLYDE OFF OPT-IN
 wikitravelEnabled=false
-windowsEnabled=true
+# KLYDE OFF OPT-IN
+windowsEnabled=false
+# KLYDE OFF OPT-IN
 youtubeEnabled=false
