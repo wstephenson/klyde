@@ -138,6 +138,12 @@ Logind instantiates only one user session per user, not per display.  This would
 
 Systemd needs to be told when the process it starts for a unit exits while the service is still running.  This is the case for any kdeinit and any kwrapper-started programs.
 
+Configuration of services.  KDE startup tries very hard to read the configuration for services it is starting as cheaply as possible. This means not starting full KDE apps first in startkde that use regular KConfig api to start kdeinit, ksplash &co, using light kstartupconfig4 to put configuration into the environment, nor anything that needs the sycoca.  How do we get this configuration into systemd-started services?
+
+Error handling.  How to bring down intermediate services if the overall session startup fails?  Eg to bring down ksplashx again if overall boot fails?  PartOf=?
+
+Getting PID from ksplashx, this echos the PID - could there be a PIDFile like option in the unit file?
+
 PROGRESS
 Packaged
 xorg-launcher-helper
@@ -150,3 +156,12 @@ and start user session using UID otherwise logind creates /run/user/<UID> but sy
 
 TODO
 Build patched dbus
+
+Lennart chat
+forking kdeinit not acceptable for redhat security labelling
+dlopen is evil, merging commmon kded modules in and compiling in statically, and keeping wacky stuff modular probably a better win than splitting everything up
+open to a desktop file cache
+autostart applications an open question, should desktop files be a first class entity in systemd, or should unit files reference desktop files
+snapshots, persisted as targets could be used as a backend for xsmp or activities.
+
+i18n will become important in systemd, esp since it makes desktop files much larger than unit files 
