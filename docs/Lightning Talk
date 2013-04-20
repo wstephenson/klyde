@@ -1,0 +1,25 @@
+Lightweight desktop environment 
+Me, jos, klaas
+
+Aims: 
+* Meet end-users changing needs
+** Lots of app choice and preferences
+** Just enough desktop
+* Meet providers' needs
+** Less to maintain and support
+** One code base for lightweight and fullfat cases
+
+Background: 
+* KDE configurable, modular, heavy by default
+* Lightweight alternatives start from scratch, getting heavier, reinvent wheels
+* Exploit C&M to shrink KDE
+
+How:
+* Small footprint - Split packages, weak dependencies
+* Simple configuration
+* Fast startup
+
+Results
+* Package repository and pattern - smaller installed footprint 
+* Configuration profiles - 50% smaller memory footprint, simpler UI
+* Systemd native KDE user session - 30% faster login, more savings possible

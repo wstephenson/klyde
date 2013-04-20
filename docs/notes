@@ -24,6 +24,7 @@ startkde
 * startup states documented in kde-workspace/ksplash/README
 * distinction between kdeinit4, klauncher and kwrapper4?
   * kdeinit launches kded and klauncher, and launches KDE processes by forking itself.  setuid to prevent OOM killing.  whatdoes kdeinit_library_path do? seems like it used to initialise lt_dl searchpath, but this was commented out in 2006 and now it only generates the kwrapper socket path using DISPLAY
+  * kded runs kconf_update
   * klauncher is a dbus service started by kdeinit.  It commands kdeinit over a local socket pair.  It is for starting other services (by desktop file) and ioslaves (by protocol/host) (incl in debug/vg mode), ioslave manager (recycles idle ioslaves, puts on hold, kills after timeout). Service activation uses appearance of dbus service to detect completed launch.  Manages startup notifications. Applies Kiosk restrictions to service requests.  Performs autostart under the control of ksmserver.
   * all source is in kdelibs/kinit.
   kwrapper4 causes a program to be launched by kdeinit4
@@ -55,6 +56,26 @@ Note however that these states should not be relied on too much:
 - states may be reordered (waiting for a later state and then a sooner state means the sooner state will take 0 time)
 "
 
+start_kdeinit_wrapper +kcminit_startup  (Wrapper exists to pass LD_LIBRARY_PATH the kdeinit4 despite it being setuid, which tries to drop risky parts of the environment)
+-> start_kdeinit
+ -> kdeinit
+  -> klauncher
+  -> kded
+   -> (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
+  -> kcminit phase 0
+ksmserver (kdeinit via kwrapper4)
+ -> kwin 
+ -calls-> klauncher::autostart(0)
+  . Plasma in phase0. Tells ksmserver to suspend further autostarts until it is ready.
+ -calls-> kcminit phase 1 
+ -calls-> klauncher::autostart(1)
+ . session restore
+ . login sound
+ -> autostart(2)
+ -> kded phase 2 
+ -> kcminit phase 2
+ . starts content of user's Autostart dirs
+ 
  
 Requirements (trying not to include ksmserver here but its effects)
 login snd->
@@ -88,7 +109,9 @@ python-kde4 requires akonadi-runtime
 
 Activities
 ----------
-Panel Applet (DONE)
+Panel Applet
+In vanilla, the panel applet is added by both the default panel layout, and an updater script.  The updater script is also run for a new user.  To make it optional and package installation activated, we could remove it from the default layout script, and just let the update add it in the default case.
+
 Desktop menu
 Desktop context menu
 window menu
@@ -385,3 +408,25 @@ disable krunner plugins?
 
 kwin tabbox allocates 3MB extra on first alt-tab.
 
+
+Installation
+============
+2GB base install
+  
+Metrics brainstorm
+==================
+- Static size
+
+Size of download
+Size of installed system
+Number of packages
+
+- Runtime size
+Memory footprint on login
+Memory footprint with predefined selection of applications running
+Time to login (same system, compare different desktops)
+Idle CPU % (as above)
+
+- Cognitive load of desktop
+Number of system settings modules
+Number of items in launcher
