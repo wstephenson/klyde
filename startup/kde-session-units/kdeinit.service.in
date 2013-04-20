@@ -7,12 +7,16 @@ After=xorg.target dbus.socket lnusertemp@cache.service lnusertemp@socket.service
 [Service]
 Type=dbus
 BusName=org.kde.klauncher
-ExecStart=@KDE4_LIBEXEC_INSTALL_DIR@/start_kdeinit_wrapper +kcminit_startup
+ExecStart=@KDE4_LIBEXEC_INSTALL_DIR@/kdeinit4 +kcminit_startup --no-fork
 # Do all of these need to be added to every user service unit file?
 # Need to set DISPLAY as long as we're running on :1 alongside a production session
-Environment=DISPLAY=:1 LD_BIND_NOW=true
+Environment=DISPLAY=:1
+# bind libs immediately so spawned apps don't have to
+Environment=LD_BIND_NOW=true
 #Environment=XDG_RUNTIME_DIR=/run/user/%I
 #Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%i/dbus/user_bus_socket
+#Replace the start_kdeinit_wrapper code with systemd's equivalent
+OOMScoreAdjust=-1000
 #The wrapper forks and exits,  so RemainAfterExit is needed
 RemainAfterExit=true
 
