@@ -8,7 +8,7 @@ Legacy Startup using startkde
 5) set force fonts dpi
 6) run configured splash screen impl
 7) Source env files
-8) Create links to persistent tmp cache socket dirs in $KDEHOME
+8) Create links to persistent tmp cache socket dirs in $KDEHOME - should be in XDG_RUNTIME_DIR
 8) launch dbus if needed, test result
 9) set KDE_SESSION_VERSION used by kfmclient in case it are running in a foreign kde version session KDE_FULL_SESSION KDE_SESSION_UID  used by kded 
 10) start kdeinit
@@ -20,11 +20,11 @@ kdeinit/ksmserver breakdown
 start_kdeinit_wrapper +kcminit_startup  (Wrapper exists to pass LD_LIBRARY_PATH the kdeinit4 despite it being setuid, which tries to drop risky parts of the environment)
 -> start_kdeinit
  -> kdeinit
-  -> klauncher
-  -> kded
-   -> (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
-  -> kcminit phase 0
-ksmserver (kdeinit via kwrapper4)
+  -> klauncher is the frontend to the minimal kdeinit process, and has its dbus interface etcj
+  -> kded. kded is responsible for keeping the sycoca database up to date. When an up to date database is present it goes into the background and the startup continues.  (autostart phase 0 and 1 modules in serial, later modules started in phase 1, 2)
+  ->Then kdeinit starts kcminit. kcminit performs initialisation of certain devices according to the user's settings
+  -> kcminit phase 0 kcminit performs initialisation of certain devices according to the user's settings
+ksmserver (by kdeinit via kwrapper4) which takes control of the rest of the startup sequence
  -> kwin 
  -calls-> klauncher::autostart(0)
   . Plasma in phase0. Tells ksmserver to suspend further autostarts until it is ready.
@@ -37,6 +37,13 @@ ksmserver (kdeinit via kwrapper4)
  -> kcminit phase 2
  . starts content of user's Autostart dirs
  
+Where does kactivitymanagerd fit into this?
+What is allowed in kded?
+Merge ksmserver, kded?
+Plasma to look at loading applets or data engines in parallel (threaded), kded also
+
+2 stage startup of Plasma, setup, then show the UI
+  
 Systemd native KDE startup
 ==========================
-We skip 1-7 for now, because they are optional.
+We skip 1-5 for now, because they are optional.
