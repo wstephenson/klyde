@@ -93,11 +93,15 @@ ForegroundPositive=41,94,25
 ForegroundVisited=155,82,94
 
 [General]
+# KLYDE do we go with the openSUSE Branding?
 ColorScheme=openSUSE
 Name=openSUSE
 shadeSortColumn=true
+# KLYDE discuss, this is Jos' personal taste
 BrowserApplication=rekonq
+# KLYDE provisional value, pending measurements
 widgetStyle=plastique
+
 
 [KDE]
 contrast=5
@@ -114,7 +118,8 @@ inactiveForeground=20,19,18
 Trash=$HOME/Desktop/Trash/
 
 [PreviewSettings]
-MaximumSize=3145728
+# KLYDE Update default preview size to 20MB, upstream this
+MaximumSize=20971520
 camera=true
 file=true
 fonts=true
