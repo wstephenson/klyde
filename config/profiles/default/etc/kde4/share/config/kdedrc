@@ -25,6 +25,10 @@ autoload=false
 [Module-nepomuksearchmodule]
 autoload=false
 
+# KLYDE NOPOLICY INSTALLATION-DEFAULT
+# [Module-networkmanagement]
+# autoload=
+
 # KLYDE OFF OPT-IN
 [Module-obexftpdaemon]
 autoload=false
