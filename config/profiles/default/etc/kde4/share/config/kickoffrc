@@ -1,8 +1,9 @@
 [Branding]
 Homepage=http://www.opensuse.org/
 
+# KLYDE add apper so that people can add software easily; this will annoy the zypper-only crowd, but a GUI to add stuff when we ship so little is a sensible default
 [Favorites]
-FavoriteURLs=/usr/share/applications/kde4/rekonq.desktop,/usr/share/applications/kde4/Kontact.desktop,/usr/share/applications/writer.desktop,/usr/share/applications/kde4/amarok.desktop,/usr/share/applications/kde4/digikam.desktop,/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/kde4/Help.desktop,/usr/share/applications/kde4/konsole.desktop
+FavoriteURLs=kcm_apper.desktop,/usr/share/applications/kde4/rekonq.desktop,/usr/share/applications/kde4/Kontact.desktop,/usr/share/applications/writer.desktop,/usr/share/applications/kde4/amarok.desktop,/usr/share/applications/kde4/digikam.desktop,/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop,/usr/share/applications/kde4/konsole.desktop
 
 [KRunner]
 loadAll=false

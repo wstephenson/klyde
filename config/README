@@ -1,3 +1,18 @@
 Work around configuration, including simplified configuration UIs and metadata
 
 simplersystemsettings: metadata for a reduced set of system settings modules. requires a patched systemsettings (in OBS)
+
+profiles: sets of config files giving a klyde setup
+We document our policy for changing defaults inline in the config files using hash comments in the following format
+
+# KLYDE SETTING REASON
+KLYDE tags the comment as relating to Klyde config
+
+SETTING=OFF|ON|NOPOLICY
+OFF/ON are syntactic sugar for enabled/disabled/true/false, whatever the config file expects
+NOPOLICY specifies that we do not set a policy for this setting, and is included so the reason for not providing policy must be given.  It should be followed by the commented out config group/field that no policy is being set for, to make the explicit lack of policy for this item clear
+
+REASON=OPT-IN|OPT-OUT|INSTALLATION-DEFAULT
+OPT-IN User should opt in to this setting
+OPT-OUT User needs to opt out of this settings (essential things)
+INSTALLATION-DEFAULT explains that NOPOLICY is used to allow the default setting resulting from installing the package to be taken.

@@ -1,32 +1,43 @@
 [General]
 DelayedCheck=true
 
+# KLYDE OFF OPT-IN
 [Module-bluedevil]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-device_automounter]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-dnssdwatcher]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-freespacenotifier]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-kwrited]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-nepomuksearchmodule]
 autoload=false
 
-[Module-networkmanagement]
-autoload=false
+# KLYDE NOPOLICY INSTALLATION-DEFAULT
+# [Module-networkmanagement]
+# autoload=
 
+# KLYDE OFF OPT-IN
 [Module-obexftpdaemon]
 autoload=false
 
+# KLYDE OFF REPLACED
+# by kscreen
 [Module-randrmonitor]
 autoload=false
 
+# KLYDE OFF OPT-IN
 [Module-remotedirnotify]
 autoload=false

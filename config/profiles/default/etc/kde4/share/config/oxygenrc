@@ -1,8 +1,14 @@
 [Windeco]
-BlendTitlebarColors=true
 AnimationsEnabled=false
-DrawTitleOutline=true
-BlendColor=Solid Color
+# KLYDE NOPOLICY INSTALLATION-DEFAULT
+#BlendTitlebarColors=true
+#DrawTitleOutline=true
+#BlendColor=Solid Color
+
+# KLYDE OFF OPT-IN
+# Oxygen is not the default style atm but in case it is enabled, turn down the candy
+[Style]
+AnimationsEnabled=false
 
 [ActiveShadow]
 InnerColor=190,239,175
