@@ -1,0 +1,44 @@
+Monkey benchmarking.
+These numbers mean nothing.  Anyone caught giving them as evidence that Klyde is lighter than anything will be required to wear a monkey suit the entire time at the inaugural Klydecon, to be held at Whitley Bay Ice Rink in July 2013.
+
+free output 5 minutes after booting live cds, default desktop, splash screens dismissed, only xterm running:
+
+In Virtualbox VM with 1024MB ram, 128GB vram, 3D acceleration enabled
+
+KDE Live Running
+Mem 1020912, 953756, 67156, 0, 12324, 467024
+b/c , 474408, 546504
+test
+XFCE Live Rescue Running
+Mem 1020912, 915920, 104922, 0, 13128, 664852
+b/c , 237940, 782972
+
+GNOME Shell Live Running
+Mem 1020912, 955628, 65284, 0, 14292, 558692
+b/c , 382644, 638238
+
+KLyde Live Running (openGL+raster effects enabled)
+Mem 1020912, 913804, 107108, 0, 14260, 554344
+b/c , 345200, 675712
+
+Ooook.   Ooooook.
+
+In Virtualbox VM with 1024MB ram, 128GB vram, 3D acceleration enabled
+
+KDE installed from Livecd
+mem 1020912, 897696, 123216, 0, 31004, 530876
+b/c 335816, 685096
+
+XFCE installed from livecd
+mem 1020912, 435436, 585476, 0, 19952, 245972
+b/c 169692, 851220
+
+GNOME Shell installed from livecd
+em 1020912, 938672, 82240, 0, 20948, 589812
+b/c 327912, 693000
+
+Klyde installed from Livecd
+mem 1020912, 726692,294220, 0, 24200, 479788
+b/c 222704, 798208
+
+So on the monkey numbers, xfce still smokes us!
